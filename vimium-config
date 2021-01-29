@@ -1,0 +1,24 @@
+unmapall
+map i scrollUp
+map k scrollDown
+map j previousTab
+map l nextTab
+map G scrollToBottom
+map gg scrollToTop
+map / enterFindMode
+map ? showHelp
+map r reload
+map gi focusInput
+map f LinkHints.activateMode
+map F LinkHints.activateModeToOpenInNewForegroundTab
+map t createTab
+map n performFind
+map N performBackwardsFind
+map x removeTab
+map X restoreTab
+map s Vomnibar.activateInNewTab
+map J goBack
+map L goForward
+map w moveTabToNewWindow
+map u moveTabLeft
+map o moveTabRight
