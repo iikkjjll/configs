@@ -22,3 +22,5 @@ map L goForward
 map w moveTabToNewWindow
 map u moveTabLeft
 map o moveTabRight
+map U closeTabsOnLeft
+map O closeTabsOnRight
