@@ -1,6 +1,6 @@
 unmapall
-map i scrollDown
-map k scrollUp
+map k scrollDown
+map i scrollUp
 map j previousTab
 map l nextTab
 map U closeTabsOnLeft
