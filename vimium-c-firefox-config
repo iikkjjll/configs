@@ -1,0 +1,22 @@
+unmapall
+map i scrollDown
+map k scrollUp
+map j previousTab
+map l nextTab
+map U closeTabsOnLeft
+map O closeTabsOnRight
+map x removeTab
+map X restoreTab
+map f LinkHints.activate
+map F LinkHints.activateModeToOpenInNewForegroundTab
+map r reload
+map / enterFindMode
+map ? showHelp
+map n performFind
+map N performBackwardsFind
+map s Vomnibar.activateInNewTab
+map gi focusInput
+map u moveTabLeft
+map o moveTabRight
+#map = zoomIn
+#map - zoomOut
