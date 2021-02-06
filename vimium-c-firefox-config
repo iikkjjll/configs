@@ -18,5 +18,7 @@ map s Vomnibar.activateInNewTab
 map gi focusInput
 map u moveTabLeft
 map o moveTabRight
+map J goBack
+map L goForward
 #map = zoomIn
 #map - zoomOut
