@@ -22,3 +22,5 @@ map J goBack
 map L goForward
 #map = zoomIn
 #map - zoomOut
+map gg scrollToTop
+map G scrollToBottom
