@@ -1,0 +1,6 @@
+# delete default options in auto proxy option and add this url to auto proxy option,
+# and set proxy port like qv2ray and set the protocol to socks5.
+# and set host is:127.0.0.1 .
+
+# Auto Proxy
+https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
