@@ -1,0 +1,562 @@
+
+# 配置文件路径 ：~/.config/lazygit/config.yml
+
+
+
+
+
+ # 一些设置gui界面的选项
+ gui:
+ 
+	# 与gui有关的东西
+    # stuff relating to the UI
+	
+	# 滚动的行高，就是按下滚动快捷键移动的行数
+	# how many lines you scroll by
+    scrollHeight: 2 
+	
+	# 滚动到底部
+	# enable scrolling past the bottom
+    scrollPastBottom: true 
+	
+	# 侧板宽度 （比例值）
+	# number from 0 to 1
+    sidePanelWidth: 0.3333 
+	
+	# 展开聚焦侧面板
+    expandFocusedSidePanel: false
+	
+	# 主面板拆分模式  
+    mainPanelSplitMode: 'flexible' 
+	# one of 'horizontal' | 'flexible' | 'vertical'
+	# 选项有：flexible：灵活的    horizontal：水平的   vertical：垂直的
+	
+	
+	
+	
+	# 主题
+    theme:
+	  
+	  # 浅色主题
+	  # For terminals with a light background
+      lightTheme: false 
+	  
+	  # 活动边框颜色
+      activeBorderColor:
+        - white
+		
+		# 粗体
+        - bold
+	
+	  # 无效的边框颜色
+      inactiveBorderColor:
+        - green
+		
+	  # 选项文字颜色
+      optionsTextColor:
+        - blue
+	
+	  # 选择行的背景色
+      selectedLineBgColor:
+        - default
+		
+	  # 选择范围的背景颜色
+      selectedRangeBgColor:
+        - blue
+		
+	# 提交长度 
+    commitLength:
+	
+	  #意思就是显示提交长度
+      show: true
+	  
+	 
+	# 鼠标事件、启用鼠标
+    mouseEvents: true
+	
+	# 跳过未分级线警告
+    skipUnstageLineWarning: false
+	
+	# 跳过隐藏警告
+    skipStashWarning: false
+	
+	
+	
+
+  # git相关设置
+  git:
+  
+	# 分页
+    paging:
+		
+	  # 颜色变量？
+      colorArg: always
+	  
+	  # 使用配置文件
+      useConfig: false
+	  
+	# 合并，归并
+    merging:
+	  # 仅适用于Unix用户
+      # only applicable to unix users
+	  
+	  # 手动提交
+      manualCommit: false
+	  
+	  # 传递给`git merge`的额外args（参数），例如：--no-ff
+      # extra args passed to `git merge`, e.g. --no-ff
+	  
+      args: ""
+	  
+	  
+	# 拉
+    pull:
+	  # 模式 
+	  # 模式有：merge：合并，吞没      rebase：重定    ff-only：
+      mode: 'merge' # one of 'merge' | 'rebase' | 'ff-only'
+	
+	
+	# 跳过挂钩前缀：wip
+    skipHookPrefix: WIP
+	
+	
+	# 自动获取
+    autoFetch: true
+	
+	
+	# 分支日志命令
+    branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --"
+	
+	
+	# 所有分支日志命令
+    allBranchesLogCmd: "git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium"
+	
+	
+	# 覆盖 Gpg （gpgcheck）一个用于验证的秘钥
+	# 防止Lazygit在使用GPG时产生单独的进程
+	# prevents lazygit from spawning a separate process when using GPG
+    overrideGpg: false 
+	
+	# 禁用强制推送
+    disableForcePushing: false
+	
+  # 刷新
+  refresher:
+  
+	# 刷新间隔
+	# file/submodule refresh interval in seconds
+	# 文件/子模块刷新间隔（以秒为单位）
+    refreshInterval: 10 
+	
+	# 获取间隔
+	# re-fetch interval in seconds
+	# 重新获取间隔（以秒为单位）
+    fetchInterval: 60 
+	
+  # 更新
+  update:
+  
+    # 更新的方式
+	# prompt：立刻更新     background：后台更新     never ：从不更新
+    method: prompt # can be: prompt | background | never
+	
+	# 检查更新的频率
+    days: 14 # how often an update is checked for
+	
+	
+  # 报告
+  # undetermined：未解决的
+  reporting: 'undetermined' # one of: 'on' | 'off' | 'undetermined'
+  
+  # 确认退出
+  confirmOnQuit: false
+  
+  # 确定在没有要取消/关闭的内容时，单击“ esc”是否将退出应用程序
+  # determines whether hitting 'esc' will quit the application when there is nothing to cancel/close
+  
+  # 在顶级返回时退出
+  quitOnTopLevelReturn: true
+  
+  # 禁用启动弹出窗口
+  disableStartupPopups: false
+  
+  # 不是存储库、不是仓库
+  # prompt：立刻    create：创建   skip：跳过
+  notARepository: 'prompt' # one of: 'prompt' | 'create' | 'skip'
+  
+  
+
+
+  # 键绑定
+  keybinding:
+  
+    # 全体的，普遍的，就是通常的配置
+    universal:
+	
+	  
+      quit: 'q'
+	  
+	  # alternative/alias of quit
+	  # 替代/退出别名  就是为退出按键取了个别名，同样可以达到退出的效果
+      quit-alt1: '<c-c>' 
+	  
+	  # ESC键返回
+	  # return to previous menu, will quit if there's nowhere to return
+	  # 返回上一级菜单，如果无处可退，将退出
+      return: '<esc>' 
+	  
+	  # 退出而不更改目录
+      quitWithoutChangingDirectory: 'Q'
+	  
+	  # 切换面板
+	  # goto the next panel
+	  # 转到下一个面板
+      togglePanel: '<tab>' 
+	  
+	  
+
+	  # go one line up
+	  # 向上排队
+	  # 上一个项目
+      # prevItem: '<up>' 
+
+	  
+      prevItem: 'i' # go one line up
+	  
+	  # 下一个项目
+	  # nextItem: '<down>' # go one line down
+	
+	
+      nextItem: 'k' # go one line down
+
+	  # prevItem-alt: 'k' # go one line up
+	  # nextItem-alt: 'j' # go one line down
+
+	  # 上一页
+      prevPage: ',' # go to next page in list
+	  
+	  # 下一页
+      nextPage: '.' # go to previous page in list
+	  
+	  # 去顶部
+      gotoTop: '<' # go to top of list
+	  
+	  # 去底部
+      gotoBottom: '>' # go to bottom of list
+	  
+	  # 转到上一个块/面板
+	  # goto the previous block / panel
+      # prevBlock: '<left>' 
+	  
+	  # 转到下一个块/面板
+	  # goto the next block / panel
+      # nextBlock: '<right>' 
+	  
+	  # goto the previous block / panel
+      prevBlock: 'I' 
+	  
+	  # goto the next block / panel
+      nextBlock: 'K' 
+	  
+	  # 配置 alt 键按？
+	  # prevBlock-alt: 'h' # goto the previous block / panel
+	  # nextBlock-alt: 'l' # goto the next block / panel
+
+
+	  # 下一个匹配项
+      nextMatch: 'n'
+	  
+	  # 上一个匹配项
+      prevMatch: 'N'
+	  
+	  # 选项菜单
+	  # optionMenu: 'x' # show help menu
+
+	  
+      optionMenu: 'd' # show help menu
+	  
+
+	  # 
+      optionMenu-alt1: '?' # show help menu
+	  
+	  # 选中选项
+      select: '<space>'
+	  
+	  # 进入
+      goInto: '<enter>'
+	  
+	  # 确认
+      confirm: '<enter>'
+	  
+	  # 确认按键 别名，就是另外一个可以用于确认的按键
+      confirm-alt1: 'y'
+	  
+	  # 移除，删除
+      remove: 'x'
+	  
+	  # 新建
+      new: 'n'
+	  
+	  # 编辑
+      edit: 'e'
+	  
+	  # 打开文件
+      openFile: 'o'
+	  
+	  # 向上滚动
+      scrollUpMain: '<pgup>' # main panel scrool up
+	  
+	  # 向下滚动
+      scrollDownMain: '<pgdown>' # main panel scrool down
+	  
+	  # 向上滚动 的另一个按键
+      scrollUpMain-alt1: 'K' # main panel scrool up
+	  
+	  # 向下滚动的另一个按键
+      scrollDownMain-alt1: 'J' # main panel scrool down
+	  
+	  # 向上滚动的第三个按键。组合键
+      scrollUpMain-alt2: '<c-u>' # main panel scrool up
+	  
+	  # 
+      scrollDownMain-alt2: '<c-d>' # main panel scrool down
+	  
+	  # 执行自定义命令
+      executeCustomCommand: ':'
+	  
+	  
+	  # 创建重定选项菜单
+      createRebaseOptionsMenu: 'm'
+	  
+	  # 推送文件
+      pushFiles: 'P'
+	  
+	  # 拉取文件
+      pullFiles: 'p'
+	  
+	  # 更新
+      refresh: 'R'
+	  
+	  # 创建补丁选项菜单
+      createPatchOptionsMenu: '<c-p>'
+	  
+	  # 下一个标齐
+      nextTab: ']'
+	  
+	  # 上一个标签
+      prevTab: '['
+	  
+	  # 下一个屏幕模式
+      nextScreenMode: '+'
+	  
+	  # 上一个屏幕模式
+      prevScreenMode: '_'
+	  
+	  # 撤销
+      undo: 'z'
+	  
+	  # 重做
+      redo: '<c-z>'
+	  
+	  # 过滤菜单
+      filteringMenu: '<c-s>'
+	  
+	  # 差异菜单
+      diffingMenu: 'W'
+	  
+	  # 差异菜单
+      diffingMenu-alt: '<c-e>' # deprecated
+	  
+	  # 复制到剪贴板
+      copyToClipboard: '<c-o>'
+	  
+	  # 提交编辑文字
+      submitEditorText: '<enter>'
+	  
+	  # 追加新行
+      appendNewline: '<tab>'
+	  
+	# 状态
+    status:
+	
+	  # 检查更新
+      checkForUpdate: 'u'
+	  
+	  # 最近的仓库？
+      recentRepos: '<enter>'
+	  
+	# 文件（当前的工作空间）
+    files:
+	
+	  # 提交更改
+      commitChanges: 'c'
+	  
+	  # 提价不被hook的更改
+      commitChangesWithoutHook: 'w' # commit changes without pre-commit hook
+	  
+	  # 修改最后一次提交
+      amendLastCommit: 'A'
+	  
+	  # 使用编辑器提交更改
+      commitChangesWithEditor: 'C'
+	  
+	  # 忽略文件
+      ignoreFile: 'i'
+	  
+	  # 刷新文件
+      refreshFiles: 'r'
+	  
+	  # 隐藏所有更改
+      stashAllChanges: 's'
+	  
+	  # 查看隐藏选项
+      viewStashOptions: 'S'
+	  
+	  # 切换所有阶段
+      toggleStagedAll: 'a' # stage/unstage all
+	  
+	  # 查看重置选项
+      viewResetOptions: 'D'
+	  
+	  # 取回
+      fetch: 'f'
+	  
+	# 分支
+    branches:
+	
+	  # 创建pull（拉取）请求
+      createPullRequest: 'o'
+	  
+	  # 按名称结帐
+      checkoutBranchByName: 'c'
+	  
+	  # 强制检出分支
+      forceCheckoutBranch: 'F'
+	  
+	  # 重定分支
+      rebaseBranch: 'r'
+	  
+	  # 合并到当前分支
+      mergeIntoCurrentBranch: 'M'
+	  
+	  # 查看Git Flow选项
+      viewGitFlowOptions: 'i'
+	  
+	  # 快进
+      fastForward: 'f' # fast-forward this branch from its upstream
+	  
+	  # 推送标签
+      pushTag: 'P'
+	  
+	  # set as upstream of checked-out branch
+	  # 设置为检出分支的上游
+      setUpstream: 'u' 
+	  
+	  
+	  
+	  # 获取远程
+      fetchRemote: 'f'
+	  
+	# 交付，提交
+    commits:
+	
+	  # 压扁，压缩
+      squashDown: 's'
+	  
+	  # 重命名提交
+      renameCommit: 'r'
+	  
+	  
+	  # 通过编辑器重命名提交
+      renameCommitWithEditor: 'R'
+	  
+	  
+	  # 查看重置选项
+      viewResetOptions: 'g'
+	  
+	  # 标记为修正
+      markCommitAsFixup: 'f'
+	  
+	  # 创建修正提交
+      createFixupCommit: 'F' # create fixup commit for this commit
+	  
+	  # 在提交的上面压缩
+      squashAboveCommits: 'S'
+	  
+	  # 向下提交
+      moveDownCommit: '<c-j>' # move commit down one
+	  
+	  # 向上提交
+      moveUpCommit: '<c-k>' # move commit up one
+	  
+	  # 修改提交
+      amendToCommit: 'A'
+	  
+	  # 选择提交
+      pickCommit: 'p' # pick commit (when mid-rebase)
+	  
+	  # 还原提交
+      revertCommit: 't'
+	  
+	  
+      cherryPickCopy: 'c'
+	  
+	  
+      cherryPickCopyRange: 'C'
+	  
+	  # 粘贴提交
+      pasteCommits: 'v'
+	  
+	  # 标记提交
+      tagCommit: 'T'
+	  
+	  # 检出提交
+      checkoutCommit: '<space>'
+	  
+	  # 
+      resetCherryPick: '<c-R>'
+	  
+	  # 复制提交消息到剪贴板
+      copyCommitMessageToClipboard: '<c-y>'
+	  
+	# 隐藏
+    stash:
+	
+	
+	  # 还原本地修改
+      popStash: 'g'
+	  
+	# 提交文件
+    commitFiles:
+	
+	  # 检出提交文件
+      checkoutCommitFile: 'c'
+	  
+	# 主要模块
+    main:
+	  # 切换拖动选择
+      toggleDragSelect: 'v'
+	  
+	  
+	  # 切换拖动选择 第二个按键
+      toggleDragSelect-alt: 'V'
+	  
+	  # 切换选择大块
+      toggleSelectHunk: 'a'
+	  
+	  # 选择两个大块头
+      pickBothHunks: 'b'
+	  
+	# 子模块
+    submodules:
+	
+	  # 初始化
+      init: 'i'
+	  
+	  # 更新
+      update: 'u'
+	  
+	  # 批量菜单
+      bulkMenu: 'b'
+	  
+
