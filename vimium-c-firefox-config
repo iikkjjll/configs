@@ -27,3 +27,4 @@ map G scrollToBottom
 map ( scrollLeft
 map ) scrollRight
 map t createTab
+map w moveTabToNewWindow
